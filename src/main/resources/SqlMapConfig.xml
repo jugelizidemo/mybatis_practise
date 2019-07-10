@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!--配置环境-->
+    <environments default="mysql">
+        <!--配置mysql环境-->
+        <environment id="mysql">
+            <!--配置事务,JDBC表示使用jdbc的事务管理-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--配置数据源(连接池)-->
+            <dataSource type="POOLED">
+                <!--配置数据库连接基本信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/hxl"/>
+                <property name="username" value="root"/>
+                <property name="password" value="claacgs"/>
+               <!-- <property name="password" value="1988926he"/>-->
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--指定映射配置文件的配置-->
+    <mappers>
+        <mapper resource="com/hxl/dao/UserInfoDao.xml"></mapper>
+    </mappers>
+</configuration>
